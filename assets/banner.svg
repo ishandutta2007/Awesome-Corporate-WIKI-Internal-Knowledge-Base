@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0a0f1d" />
+    </linearGradient>
+
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="glowGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.35" />
+      <circle cx="40" cy="40" r="1.2" fill="#475569" fill-opacity="0.4" />
+    </pattern>
+
+    <!-- Drop Shadows and Filters -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    /* CSS animations for dynamic background & badge effects */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.08); }
+    }
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+      50% { transform: translateY(-18px) translateX(10px); opacity: 0.85; }
+      100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+    }
+    @keyframes dashStream {
+      to { stroke-dashoffset: -120; }
+    }
+    @keyframes shimmerPill {
+      0%, 100% { stroke-opacity: 0.4; }
+      50% { stroke-opacity: 0.95; }
+    }
+
+    .bg-pulse-1 {
+      animation: pulseGlow 8s ease-in-out infinite;
+      transform-origin: 200px 100px;
+    }
+    .bg-pulse-2 {
+      animation: pulseGlow 10s ease-in-out infinite reverse;
+      transform-origin: 1000px 320px;
+    }
+    .stream-line {
+      stroke-dasharray: 8 12;
+      animation: dashStream 6s linear infinite;
+    }
+    .particle-1 { animation: floatParticle 7s ease-in-out infinite; }
+    .particle-2 { animation: floatParticle 9s ease-in-out infinite 1.5s; }
+    .particle-3 { animation: floatParticle 6s ease-in-out infinite 3s; }
+    .pill-border { animation: shimmerPill 3.5s ease-in-out infinite; }
+    
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+    .badge-text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-weight: 600;
+      font-size: 13px;
+    }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGradient)" />
+  <rect width="1200" height="420" fill="url(#grid)" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <circle cx="180" cy="90" r="190" fill="url(#glowGrad1)" class="bg-pulse-1" filter="url(#glow)" />
+  <circle cx="1020" cy="310" r="220" fill="url(#glowGrad1)" class="bg-pulse-2" filter="url(#glow)" />
+
+  <!-- Background Data Flow / Circuit Lines (Dynamic Dash Stream) -->
+  <g opacity="0.35">
+    <path d="M 80,340 C 260,340 320,380 480,380 S 750,330 920,350 S 1080,320 1140,290" 
+          fill="none" stroke="url(#primaryGrad)" stroke-width="2.5" class="stream-line" />
+    <path d="M 60,80 C 220,110 380,40 540,70 S 820,130 980,60 S 1100,100 1150,80" 
+          fill="none" stroke="#38bdf8" stroke-width="1.5" class="stream-line" stroke-dasharray="6 14" />
+  </g>
+
+  <!-- Floating Particles / Knowledge Nodes -->
+  <g class="particle-1">
+    <circle cx="130" cy="220" r="4.5" fill="#38bdf8" filter="url(#glow)" />
+    <circle cx="1080" cy="140" r="5" fill="#c084fc" filter="url(#glow)" />
+  </g>
+  <g class="particle-2">
+    <circle cx="280" cy="330" r="3.5" fill="#818cf8" />
+    <circle cx="960" cy="240" r="4" fill="#38bdf8" />
+  </g>
+  <g class="particle-3">
+    <circle cx="1040" cy="80" r="3" fill="#34d399" />
+    <circle cx="190" cy="310" r="3.5" fill="#f472b6" />
+  </g>
+
+  <!-- Foreground Content Container -->
+  <!-- Top Pill: Status & Ecosystem -->
+  <g transform="translate(425, 42)">
+    <rect width="350" height="34" rx="17" fill="#1e293b" fill-opacity="0.8" stroke="url(#primaryGrad)" stroke-width="1.2" class="pill-border" />
+    <circle cx="20" cy="17" r="5" fill="#10b981" filter="url(#glow)" />
+    <text x="35" y="22" fill="#cbd5e1" class="badge-text">CURATED ENTERPRISE ECOSYSTEM</text>
+  </g>
+
+  <!-- Main Title (Gradient, Bold, Unobstructed) -->
+  <text x="600" y="145" text-anchor="middle" fill="url(#primaryGrad)" font-size="44" class="title-text" filter="url(#shadow)">
+    Corporate Wiki &amp; Knowledge Base
+  </text>
+
+  <!-- Subtitle (Clear, Crisp, Readable) -->
+  <text x="600" y="195" text-anchor="middle" fill="#94a3b8" font-size="20" class="subtitle-text">
+    The Definitive Landscape of SaaS Platforms &amp; Self-Hosted Open-Source Solutions
+  </text>
+
+  <!-- Tagline / Architecture Focus -->
+  <text x="600" y="235" text-anchor="middle" fill="#64748b" font-size="15" class="subtitle-text">
+    Team Documentation • Institutional Memory • Semantic Search • Local-First &amp; Git-Backed AI
+  </text>
+
+  <!-- Interactive / Modern Feature Badges (Pills) -->
+  <g transform="translate(180, 280)">
+    <!-- Pill 1: Enterprise SaaS -->
+    <g transform="translate(0, 0)">
+      <rect width="185" height="54" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" filter="url(#shadow)" />
+      <text x="92" y="25" text-anchor="middle" fill="#38bdf8" class="badge-text" font-size="14">Enterprise SaaS</text>
+      <text x="92" y="43" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Confluence • Notion • Guru</text>
+    </g>
+
+    <!-- Pill 2: Open Source & Self-Hosted -->
+    <g transform="translate(215, 0)">
+      <rect width="200" height="54" rx="12" fill="url(#cardGrad)" stroke="#6366f1" stroke-width="1.4" filter="url(#shadow)" class="pill-border" />
+      <text x="100" y="25" text-anchor="middle" fill="#a5b4fc" class="badge-text" font-size="14">Open-Source Core</text>
+      <text x="100" y="43" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, sans-serif">AFFiNE • AppFlowy • Outline</text>
+    </g>
+
+    <!-- Pill 3: Self-Hosted Docker -->
+    <g transform="translate(445, 0)">
+      <rect width="185" height="54" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" filter="url(#shadow)" />
+      <text x="92" y="25" text-anchor="middle" fill="#34d399" class="badge-text" font-size="14">Data Sovereignty</text>
+      <text x="92" y="43" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Wiki.js • BookStack • Kherad</text>
+    </g>
+
+    <!-- Pill 4: AI & RAG Ready -->
+    <g transform="translate(660, 0)">
+      <rect width="180" height="54" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" filter="url(#shadow)" />
+      <text x="90" y="25" text-anchor="middle" fill="#f472b6" class="badge-text" font-size="14">AI &amp; RAG Ready</text>
+      <text x="90" y="43" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Semantic &amp; Vector Search</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Stroke -->
+  <line x1="160" y1="375" x2="1040" y2="375" stroke="url(#primaryGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+</svg>
