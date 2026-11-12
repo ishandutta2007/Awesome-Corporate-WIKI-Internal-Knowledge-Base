@@ -1,6 +1,6 @@
 # Awesome-Corporate-WIKI-Internal-Knowledge-Base
 
-# Top Corporate Wiki & Internal Knowledge Base Ecosystem
+## Top Corporate Wiki & Internal Knowledge Base Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Team Documentation, Knowledge Sharing & AI-Assisted Search*  
