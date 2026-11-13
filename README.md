@@ -77,9 +77,9 @@ The corporate wiki and internal knowledge management software market is estimate
 
 ## 💻 Open-Source GitHub Projects
 
-*Sorted in descending order by GitHub Stars. Badges display real-time stargazers and link directly to each project's stargazers community page.*
+*Sorted in descending order by GitHub_Stars. Badges display real-time stargazers and link directly to each project's stargazers community page.*
 
-| Project | GitHub Stars Badge | Tech Stack / Architecture | Key Highlights & Description |
+| Project | GitHub_Stars_Badge | Tech Stack / Architecture | Key Highlights & Description |
 |:---|:---|:---|:---|
 | **[AppFlowy](https://github.com/AppFlowy-IO/AppFlowy)** | [![Stars](https://img.shields.io/github/stars/AppFlowy-IO/AppFlowy?style=social&color=white)](https://github.com/AppFlowy-IO/AppFlowy/stargazers) | Flutter, Rust, SQLite / Supabase | **Open-source Notion alternative** built for data privacy, offline-first execution, and native cross-platform speed. Fully customizable views (Kanban, Grid, Document), offline local storage, and self-hosted Supabase cloud sync. |
 | **[AFFiNE](https://github.com/toeverything/AFFiNE)** | [![Stars](https://img.shields.io/github/stars/toeverything/AFFiNE?style=social&color=white)](https://github.com/toeverything/AFFiNE/stargazers) | TypeScript, Rust, React, CRDTs | **All-in-one workspace uniting docs, whiteboard, and database.** Features multimodal local-first storage, real-time collaboration via conflict-free replicated data types (CRDTs), and embedded vector AI capabilities. |
